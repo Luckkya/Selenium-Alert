@@ -1,0 +1,26 @@
+package SwitchCommands;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class PromptAlert {
+
+	public static void main(String[] args) {
+
+
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://vinothqaacademy.com/alert-and-popup/");
+		
+		driver.findElement(By.cssSelector("button[name='promptalertbox1234']")).click();
+		
+		Alert PA = driver.switchTo().alert();
+		PA.sendKeys("agree");
+		PA.accept();
+		
+		driver.quit();
+		
+	}
+
+}
